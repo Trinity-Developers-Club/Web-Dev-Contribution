@@ -5,31 +5,42 @@
 
 
 Our repository is a welcoming space for open source enthusiasts of all levels.
-## Whether it’s your first or fiftieth pull request, there’s always more to learn! We’ve put together a few resources that can help you create quality pull requests, keep your repositories pristine, and build on your open source knowledge.
-Please take a moment to review our contribution guidelines. You can contribute to any web development framework here, ensuring your contributions are placed in the right directory. If you encounter any issues, don't hesitate to create a report.
-### Rules To Contribute To This Repo
-- You can contribute to any framework of web development via this repo
-- While adding any content it should be inside its appropriate directory.
-- If there is any problem with any app create an issue!
+<div align="center">
+  <h2>Whether it’s your first or fiftieth pull request, there’s always more to learn! We’ve put together a few resources that can help you create quality pull requests, keep your repositories pristine, and build on your open-source knowledge.</h2>
+</div>
 
-### How you can contribute to this repo ?
-- This repo has a dedicated folder with a framework name. If your app is made in that framework
-- You have to add a folder of your name in that folder.
-- You have to add your app in your folder with proper README.md in that folder.
-- You can update the existing app with its better version and with new features.
-- Solve issues raised by other people or yourself.
-
-### Steps For Contribution
-
-1. Fork this repo
-2. Star this repo
-3. Create a new branch with your name
-4. Add your folder
-5. Commit the code
-6. Make a pull request
-
---
-### FEATURES
+## FEATURES
   - Beginner-friendly
   - Targeted for App developers.
   - Would also help participants who are familiar with mobile app development.
+
+Please take a moment to review our contribution guidelines. You can contribute to any web development framework here, ensuring your contributions are placed in the right directory. If you encounter any issues, don't hesitate to create a report.
+
+# <u>Contribution Guidelines</u>
+Before you dive in, please take a moment to familiarize yourself with our contribution guidelines:
+
+- You're welcome to contribute to any web development framework within this repository.
+- Ensure that your contributions are placed in the appropriate directory.
+- If you encounter any issues or problems, please create an issue so we can address it promptly.
+
+## How you can contribute?
+Here's how you can make your mark on this repository:
+
+1. Locate the dedicated folder for the web development framework that your app is built on.
+2. Inside that framework folder, create a subfolder with your name.
+3. Add your app to your personal folder, complete with a well-structured README.md.
+4. Feel free to enhance existing apps by updating them with new features or improved versions.
+5. Consider tackling issues raised by others or even opening issues for challenges you'd like to address yourself.
+
+### Steps For Contribution
+To get started, follow these simple steps:
+
+1. Fork this repository to make your own copy.
+2. Give us a star if you find this repository valuable.
+3. Create a new branch named after you.
+4. Add your unique folder within the relevant framework's directory.
+5. Commit your code and changes.
+6. Submit a pull request so that your contributions can be reviewed and merged.
+
+We're excited to have you on board. Here's to making Hacktoberfest an opportunity for growth and collaboration. 
+### <b>Happy coding!</b>
