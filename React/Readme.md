@@ -13,9 +13,10 @@ This folder is exclusively for React apps.
 1. Fork this folder.
 2. Star this folder.
 3. Create a new branch using your name.
-4. Add your folder with your React app.
-5. Commit your code.
-6. Initiate a pull request.
+4. Make sure your react folder has .gitignore file and it has node modules mentioned in it before adding it via ``git add .``
+5. Add your folder with your React app.
+6. Commit your code.
+7. Initiate a pull request.
 ## Key Highlights
 - Welcoming to React enthusiasts of all levels.
 - Specifically designed for React app developers.
