@@ -1,0 +1,15 @@
+{
+  "name": "express-js",
+  "version": "1.0.0",
+  "description": "This folder is exclusively for Express.js apps.\r - Ensure your app's code resides inside your personal folder.\r - If you come across any app-related issues, please open a corresponding issue for discussion.\r ## How To Contribute\r 1. For Express.js apps, create a folder in your name.\r 2. Place your Express.js app code inside your folder along with a detailed README.md.\r 3. Don't hesitate to enhance existing apps with new features and improvements.\r 4. Participate by resolving issues raised by other contributors or yourself.\r ## Contribution Steps\r 1. Fork this folder.\r 2. Star this folder.\r 3. Create a new branch using your name.\r 4. Add your folder with your Express.js app.\r 5. Commit your code.\r 6. Initiate a pull request.\r ## Commands to Contribute Using Express.js\r 1. Clone the repository to your local machine:\r ``git clone <repository-url>``",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
