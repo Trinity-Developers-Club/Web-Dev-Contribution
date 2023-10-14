@@ -1,0 +1,72 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+
+
+
+
+  /* -----------------------Shimmer code------------------ */
+.shimmer-card{
+    width: 275px;
+    height: 480px;
+    border-radius: 1rem;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem 0 lightgray;
+
+}
+
+.card-img{
+    width: 255px;
+    height: 200px;
+    background: lightgray;
+    border-radius: 10px;
+}
+.card-body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.card-title{
+    width: 240px;
+    height: 30px;
+    background: lightgray;
+    border-radius: 12px;
+}
+.card-details{
+    width: 240px;
+    height: 100px;
+    background: lightgray;
+    border-radius: 12px;
+
+}
+
+
+/* ----------------------- Spinner coder  ------------------------- */
+
+
+
+.spinner {
+   width: 56px;
+   height: 56px;
+   border: 11.2px #474bff double;
+   border-left-style: solid;
+   border-radius: 50%;
+   animation: spinner-aib1d7 0.75s infinite linear;
+}
+
+@keyframes spinner-aib1d7 {
+   to {
+      transform: rotate(360deg);
+   }
+} 
