@@ -1,5 +1,3 @@
-
-
 # JavaScript
 ## Welcome to the JavaScript Folder! This space is dedicated to JavaScript applications. Contributors can submit their JavaScript app code within their designated named folders and create pull requests for the same.
 ## Guidelines For Contribution
