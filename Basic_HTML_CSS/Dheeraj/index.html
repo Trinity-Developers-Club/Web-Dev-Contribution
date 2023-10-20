@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health News</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 0;
+            font-family: 'Arial', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color:rgb(98, 98, 221);
+        }
+
+        .news-card {
+            border: 1px solid #ddd;
+            padding: 10px; 
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 350px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            border-radius: 25px;
+        }
+
+        .news-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        }
+
+        .news-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px; 
+        }
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            display: none;
+        }
+
+        #load-more-btn {
+            background-color: rgb(68, 115, 245);
+            color: white;
+            padding: 8px; 
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Article & News</h1>
+
+    <div id="news-container" style="display: flex; flex-wrap: wrap; justify-content: space-around;"></div>
+
+    <div id="footer">
+        <button id="load-more-btn">Load More...</button>
+    </div>
+
+    <script>
+        const apiKey = 'cf47b5871b5e4e9cb925242fc564c991';
+        let page = 1;
+        const pageSize = 15; 
+        const apiUrl = `https://newsapi.org/v2/everything?q=mental%20health&apiKey=${apiKey}&pageSize=${pageSize}&page=${page}`;
+
+        async function fetchNews() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok') {
+                    const mentalHealthNews = data.articles.filter(article => 
+                        article.title.toLowerCase().includes('mental health') ||
+                        article.description.toLowerCase().includes('mental health')
+                    );
+
+                    displayNews(mentalHealthNews);
+                } else {
+                    console.error('Error fetching news:', data.message);
+                }
+            } catch (error) {
+                console.error('Error fetching news:', error.message);
+            }
+        }
+
+        function displayNews(articles) {
+            const newsContainer = document.getElementById('news-container');
+
+            articles.forEach(article => {
+                const newsCard = document.createElement('div');
+                newsCard.className = 'news-card';
+                newsCard.innerHTML = `
+                    <h2>${article.title}</h2>
+                    <img src="${article.urlToImage}" alt="Article Image">
+                    <p>${article.description}</p>
+                    <p><a href="${article.url}" target="_blank">Read more</a></p>
+                `;
+                newsContainer.appendChild(newsCard);
+            });
+
+            if (articles.length === pageSize) {
+                document.getElementById('footer').style.display = 'block';
+            }
+        }
+
+        async function loadMoreNews() {
+            page++;
+            const moreNewsUrl = `https://newsapi.org/v2/everything?q=mental%20health&apiKey=${apiKey}&pageSize=${pageSize}&page=${page}`;
+            
+            try {
+                const response = await fetch(moreNewsUrl);
+                const data = await response.json();
+
+                if (data.status === 'ok') {
+                    const mentalHealthNews = data.articles.filter(article => 
+                        article.title.toLowerCase().includes('mental health') ||
+                        article.description.toLowerCase().includes('mental health')
+                    );
+
+                    displayNews(mentalHealthNews);
+                } else {
+                    console.error('Error fetching more news:', data.message);
+                }
+            } catch (error) {
+                console.error('Error fetching more news:', error.message);
+            }
+        }
+
+        document.getElementById('load-more-btn').addEventListener('click', loadMoreNews);
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            if (scrollY + windowHeight >= documentHeight - 50) {
+                document.getElementById('footer').style.display = 'block';
+            } else {
+                document.getElementById('footer').style.display = 'none';
+            }
+        });
+
+        fetchNews();
+    </script>
+
+</body>
+</html>
