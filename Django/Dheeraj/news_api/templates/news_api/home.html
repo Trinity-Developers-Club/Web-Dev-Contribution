@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 300px; 
+            border: 1px solid #ddd;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Latest Health News</h1>
+
+    <div class="card-container">
+        {% for article in articles %}
+            <div class="card">
+                {% if article.urlToImage %}
+                    <img src="{{ article.urlToImage }}" alt="{{ article.title }}">
+                {% endif %}
+                <div class="card-content">
+                    <h2>{{ article.title }}</h2>
+                    <p>{{ article.description }}</p>
+                    <p><a href="{{ article.url }}" target="_blank">Read more</a></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if
