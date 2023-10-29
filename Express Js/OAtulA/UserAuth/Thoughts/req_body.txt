@@ -1,0 +1,20 @@
+For the normal requests the body will look like this.
+`
+body: JSON.stringify({
+      name: 'Aman',
+      password: '1245heail'
+    }
+`
+But for the put I want request
+for password update
+`
+body:JSON.stringify({
+	existingUser:{
+      name: 'Aman',
+      password: '1245heail'
+    },
+    Update:{
+    password: 'mohan2984'
+	}
+}
+`
