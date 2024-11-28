@@ -1,0 +1,2 @@
+Again I know figured it out looking objectively.
+That bcrypt.compare is async so now I put the await and it works well.
